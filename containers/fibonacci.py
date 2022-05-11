@@ -97,12 +97,12 @@ class FibIter:
             self.i += 1
             return new
 
+
 def fib_yield(n=None):
     '''
     This function returns a generator that computes the first n fibonacci numbers.
     If n is None, then the generator is infinite.
     '''
-
     f0 = 1
     f1 = 1
     yield 1
