@@ -91,9 +91,9 @@ class FibIter:
             raise StopIteration
         else:
             new = self.f0
+            self.f2 = self.f1 + self.f0
             self.f0 = self.f1
             self.f1 = self.f2
-            self.f2 = self.f1 + self.f0
             self.i += 1
             return new
 
@@ -108,13 +108,13 @@ def fib_yield(n=None):
     yield 1
     if n is not None:
         for i in range(n - 1):
+            f2 = f1 + f0
             f0 = f1
             f1 = f2
-            f2 = f1 + f0
-            yield i0
+            yield f0
     else:
         while True:
+            f2 = f1 + f0
             f0 = f1
             f1 = f2
-            f2 = f1 + f0
             yield f0
